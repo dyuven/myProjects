@@ -39,7 +39,7 @@ class ThirdViewController: UIViewController {
          self.mainLabel.text = String(self.weathers1[0].weather[0].main)
          self.descriptionLabel.text = self.weathers1[0].weather[0].description
          self.tempLabel.text = "temp: " + String(Int(self.weathers1[0].main.temp - 273.15))
-         self.pressureLabel.text = "pressure: " + String(self.weathers1[0].main.pressure)
+         self.pressureLabel.text = String(self.weathers1[0].main.pressure)
          self.humidityLabel.text = String(self.weathers1[0].main.humidity)
          let url = URL(string: "https:/openweathermap.org/img/wn/\(self.weathers1[0].weather[0].icon).png")
          let data = try? Data(contentsOf: url!)
@@ -99,7 +99,7 @@ extension ThirdViewController: UITableViewDataSource{
         cell.mainLabel.text = String(model.weather[0].main)
         cell.descriptionLabel.text = model.weather[0].description
         cell.tempLabel.text = "temp: " + String(Int(model.main.temp - 273.15))
-        cell.pressureLabel.text = "pressure: " + String(model.main.pressure)
+        cell.pressureLabel.text = String(model.main.pressure)
         cell.humidityLabel.text = String(model.main.humidity)
         let url = URL(string: "https:/openweathermap.org/img/wn/\(model.weather[0].icon).png")
         let data = try? Data(contentsOf: url!)
